@@ -20,6 +20,7 @@ class SmsSender
       to: @phone,
       body: @message
     )
+    puts "Send message to #{@name}"
   end
 end
 
