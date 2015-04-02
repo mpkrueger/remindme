@@ -2,12 +2,16 @@
 
 class SmsSender
   # attr_reader :client
+  require 'twilio-ruby'
+
   def initialize(reminder)
     @from = "+14259806288"
     @phone = "+16508159753"
     @name = "Matt"
     @message = reminder.message
-    @client = Twilio::REST::Client.new ENV["twilio_account_sid"], ENV["twilio_auth_token"]
+    account_sid = ENV["twilio_account_sid"]
+    auth_token = ENV["twilio_auth_token"]
+    @client = Twilio::REST::Client.new account_sid, auth_token
   end
 
   def send_sms
