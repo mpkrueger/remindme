@@ -4,9 +4,9 @@ class SmsSender
   attr_reader :client
   def initialize(user, reminder)
     @from = "+14259806288"
-    @phone = user.phone
-    @name = user.name
-    @message = reminder.message(@name)
+    @phone = "+16508159753"
+    @name = "Matt"
+    @message = reminder.message
     @client = Twilio::REST::Client.new twilio_account_sid, twilio_auth_token
   end
 

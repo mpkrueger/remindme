@@ -3,7 +3,7 @@ require 'twilio-ruby'
 
 client = Twilio::REST::Client.new account_sid, auth_token
 
-from = "=14159806288"
+from = "+14159806288"
 
 friends = {
   "+17085574423" => "mia pinguino",
