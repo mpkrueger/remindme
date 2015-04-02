@@ -9,8 +9,8 @@ class SmsSender
     @phone = "+16508159753"
     @name = "Matt"
     @message = reminder.message
-    account_sid = "AC6bd1f1bef79fe04aad140d70dda07feb"
-    auth_token = "bde85db677d6a982dbba84f65739dfd2"
+    account_sid = ENV["twilio_account_sid"]
+    auth_token = ENV["twilio_auth_token"]
     @client = Twilio::REST::Client.new account_sid, auth_token
   end
 
