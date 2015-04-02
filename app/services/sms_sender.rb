@@ -2,7 +2,7 @@
 
 class SmsSender
   attr_reader :client
-  def initialize(user, reminder)
+  def initialize(reminder)
     @from = "+14259806288"
     @phone = "+16508159753"
     @name = "Matt"
