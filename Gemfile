@@ -23,3 +23,5 @@ end
 gem 'bootstrap-sass'
 gem 'authy'
 gem 'figaro', '1.0'
+gem 'twilio-ruby'
+gem 'sinatra'
