@@ -1,7 +1,7 @@
 # Twilio | SmsSender | Your app
 
 class SmsSender
-  attr_reader :client
+  # attr_reader :client
   def initialize(reminder)
     @from = "+14259806288"
     @phone = "+16508159753"
@@ -11,7 +11,7 @@ class SmsSender
   end
 
   def send_sms
-    client.account.messages.create(
+    @client.account.messages.create(
       from: @from,
       to: @phone,
       body: @message
