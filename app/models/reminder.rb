@@ -1,4 +1,6 @@
 class Reminder < ActiveRecord::Base
-  scope :messages_to_send, -> { where('send_time > Time.now && send_time <= ?', Time.now + 2.minutes) }
+  scope :messages_to_send, -> { where('send_time > ? AND send_time <= ?', Time.now, Time.now + 2.minutes) }
+
+  # NEED TO FIX THIS
 
 end
