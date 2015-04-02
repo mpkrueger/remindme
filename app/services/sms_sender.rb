@@ -7,7 +7,7 @@ class SmsSender
     @phone = "+16508159753"
     @name = "Matt"
     @message = reminder.message
-    @client = Twilio::REST::Client.new twilio_account_sid, twilio_auth_token
+    @client = Twilio::REST::Client.new ENV["twilio_account_sid"], ENV["twilio_auth_token"]
   end
 
   def send_sms
