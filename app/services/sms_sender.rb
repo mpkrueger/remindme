@@ -5,7 +5,7 @@ class SmsSender
   require 'twilio-ruby'
 
   def initialize(reminder)
-    @from = "+14259806288"
+    @from = "+14159806288"
     @phone = "+16508159753"
     @name = "Matt"
     @message = reminder.message
