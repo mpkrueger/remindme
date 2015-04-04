@@ -1,0 +1,14 @@
+<h1>Your Reminders</h1>
+<p><%= link_to "Create a new reminder", new_reminder_path, class: 'btn btn-success' %></p>
+<table class="table">
+  <tr>
+    <th>Reminder Message</th>
+    <th>Next Send Date</th>
+  </tr>
+  <% @reminders.each do |reminder| %>
+    <tr>
+      <th><%= link_to reminder.message, reminder_path(reminder.id) %></th>
+      <th><%= reminder.send_time %></th>
+    </tr>
+  <% end %>
+</table>

@@ -1,0 +1,10 @@
+<h1>Create a New Reminder</h1>
+<%= form_for @reminder do |f| %>
+  <%= f.label :message %>
+  <%= f.text_field :message %>
+
+  <%= f.label :send_time %>
+  <%= f.datetime_field :send_time %>
+
+  <%= f.submit "Save" %>
+<% end %>

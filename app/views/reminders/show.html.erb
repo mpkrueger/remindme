@@ -1,0 +1,6 @@
+<h1><%= @reminder.message %></h1>
+<%= @reminder.message %>
+<%= @reminder.send_time %>
+
+<p><%= link_to "Edit Reminder", edit_reminder_path(@reminder.id), class: 'btn btn-success' %></p>
+<p><%= link_to "Delete Reminder", reminder_path(@reminder.id), method: :delete %></p>
