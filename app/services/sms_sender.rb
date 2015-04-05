@@ -4,10 +4,10 @@ class SmsSender
   # attr_reader :client
   require 'twilio-ruby'
 
-  def initialize(reminder)
+  def initialize(reminder, user)
     @from = "+14159806288"
-    @phone = "+16508159753"
-    @name = "Matt"
+    @phone = user.phone_number
+    @name = user.name
     @message = reminder.message
     account_sid = ENV["twilio_account_sid"]
     auth_token = ENV["twilio_auth_token"]

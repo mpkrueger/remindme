@@ -1,0 +1,28 @@
+<h1>Welcome to RemindMe!</h1>
+<p>Enter the below information to create an account and get started.</p>
+
+<% if @user.errors.any? %>
+  <h2>Oops, something went wrong!</h2>
+
+  <ul>
+    <% @user.errors.full_messages.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @user do |f| %>
+  <div class="form-group">
+    <%= f.label :name, "Tell us your name:" %>
+    <%= f.text_field :name, class: "form-control", placeholder: "Your Name" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :password_digest, "Enter a password:" %>
+    <%= f.password_field :password_digest, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :phone_number %>
+    <%= f.text_field :phone_number, class: "form-control", id: "authy-cellphone" %>
+  </div>
+  <button class="btn btn-primary">Sign up</button>
+<% end %>
