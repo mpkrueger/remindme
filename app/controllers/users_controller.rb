@@ -30,7 +30,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = current_user
+    @user = User.find(params[:id])
   end
 
   def show_verify
@@ -53,7 +53,7 @@ class UsersController < ApplicationController
   end
 
   def resend
-    @user = current_user
+    @user = User.find(params[:id])
     Authy::API.request_sms(id: @user.authy_id)
     flash[:notice] = "Verification code re-sent"
     redirect_to verify_path
@@ -62,11 +62,11 @@ class UsersController < ApplicationController
   private 
 
   def send_message(message)
-    @user = current_user
+    @user = User.find(params[:id])
     SmsSender.new(message, @user).send_sms
   end
 
   def user_params
-    params.require(:user).permit(:name, :password_digest, :phone_number)
+    params.require(:user).permit(:id, :name, :password_digest, :phone_number)
   end
 end
