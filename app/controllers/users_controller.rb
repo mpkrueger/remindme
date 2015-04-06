@@ -38,7 +38,7 @@ class UsersController < ApplicationController
   end
 
   def verify
-    @user = current_user
+    @user = User.find(params[:id])
 
     token = Authy::API.verify(id: @user.authy_id, token: params[:token])
 
