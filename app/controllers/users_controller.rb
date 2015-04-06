@@ -19,7 +19,6 @@ class UsersController < ApplicationController
       else
         @errors = authy.errors
       end
-      binding.pry
 
       Authy::API.request_sms(id: @user.authy_id)
 
@@ -39,6 +38,7 @@ class UsersController < ApplicationController
 
   def verify
     @user = User.find(params[:id])
+    binding.pry
 
     token = Authy::API.verify(id: @user.authy_id, token: params[:token])
 
