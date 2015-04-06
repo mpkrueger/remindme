@@ -13,7 +13,13 @@ class UsersController < ApplicationController
         cellphone: @user.phone_number,
         country_code: 1
       )
-      @user.update(authy_id: authy.id)
+      
+      if authy.ok?
+        @user.update(authy_id: authy.id)
+      else
+        @errors = authy.errors
+      end
+      binding.pry
 
       Authy::API.request_sms(id: @user.authy_id)
 
