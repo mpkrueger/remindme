@@ -8,7 +8,7 @@ class SmsSender
     @from = "+14159806288"
     @phone = user.phone_number
     @name = user.name
-    @message = reminder.kind_of? Reminder ? reminder.message : reminder
+    @message = reminder.kind_of?(Reminder) ? reminder.message : reminder
     account_sid = ENV["twilio_account_sid"]
     auth_token = ENV["twilio_auth_token"]
     @client = Twilio::REST::Client.new account_sid, auth_token

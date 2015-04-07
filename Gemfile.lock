@@ -46,6 +46,8 @@ GEM
     bootstrap-sass (3.3.4.1)
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.2.19)
+    bootstrap3-datetimepicker-rails (4.7.14)
+      momentjs-rails (>= 2.8.1)
     builder (3.2.2)
     clockwork (1.1.0)
       activesupport
@@ -85,6 +87,8 @@ GEM
     mime-types (2.4.3)
     mini_portile (0.6.2)
     minitest (5.5.1)
+    momentjs-rails (2.9.0)
+      railties (>= 3.1)
     multi_json (1.11.0)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
@@ -193,11 +197,13 @@ DEPENDENCIES
   authy
   bcrypt (~> 3.1.7)
   bootstrap-sass
+  bootstrap3-datetimepicker-rails (~> 4.7.14)
   clockwork
   coffee-rails (~> 4.1.0)
   figaro (= 1.0)
   jbuilder (~> 2.0)
   jquery-rails
+  momentjs-rails (>= 2.9.0)
   pg
   pry
   rails (= 4.2.0)
