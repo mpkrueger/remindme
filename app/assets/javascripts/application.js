@@ -15,3 +15,8 @@
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
+
+
+$(function () {
+                $('#datetime_field').datetimepicker();
+            });
