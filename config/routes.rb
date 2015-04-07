@@ -1,11 +1,16 @@
 Rails.application.routes.draw do
 
-  get "users/verify", to: "users#show_verify", as: 'verify'
-  post "users/verify"
+  
+  
   post "users/resend"
   
   resources :reminders
-  resources :users, only: [:new, :create, :show]
+  resources :users, only: [:new, :create, :show] do
+    member do
+      post "verify"
+      get "verify", to: "users#show_verify"
+    end
+  end
 
   get 'welcome/index'
 

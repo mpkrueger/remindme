@@ -22,7 +22,7 @@ class UsersController < ApplicationController
 
       Authy::API.request_sms(id: @user.authy_id)
 
-      redirect_to verify_path
+      redirect_to verify_user_path(@user.id)
     else
       render :new
     end
@@ -33,12 +33,12 @@ class UsersController < ApplicationController
   end
 
   def show_verify
+    @user = User.find(params[:id])
     return redirect_to new_user_path unless session[:user_id]
   end
 
   def verify
     @user = User.find(params[:id])
-    binding.pry
 
     token = Authy::API.verify(id: @user.authy_id, token: params[:token])
 
