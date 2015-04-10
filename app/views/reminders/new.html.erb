@@ -4,7 +4,9 @@
   <%= f.text_field :message %>
 
   <%= f.label :send_time %>
-  <%= f.text_field :send_time, id: "datetime_field" %>
+  <div class="datetimepicker-container">
+    <%= f.text_field :send_time, class: "form-control", id: "datetime_field" %>
+  </div>
 
   <%= f.submit "Save" %>
 <% end %>
