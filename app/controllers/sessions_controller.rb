@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     puts params
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to root
+      redirect_to root_path
     else
       flash[:error] = "Uh oh, we don't recognize you. Please try to log in again."
       redirect_to '/login'
