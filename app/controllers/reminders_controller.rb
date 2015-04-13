@@ -15,6 +15,7 @@ class RemindersController < ApplicationController
 
   def create
     @reminder = Reminder.new(params.require(:reminder).permit(:message, :send_time))
+    @reminder.user_id = current_user.id
     if @reminder.save
       flash[:notice] = "Reminder was saved."
       redirect_to @reminder
