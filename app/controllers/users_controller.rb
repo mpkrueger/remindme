@@ -48,7 +48,7 @@ class UsersController < ApplicationController
       redirect_to user_path(@user.id)
     else
       flash[:error] = "Incorrect code, please try again."
-      render show_verify
+      render root_path
     end
   end
 

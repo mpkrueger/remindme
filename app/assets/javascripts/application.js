@@ -20,5 +20,7 @@
 
 
 $(function () {
-                $('#datetime_field').datetimepicker();
+                $('#datetime_field').datetimepicker({
+                  format: "YYYY/MM/DD HH:mm:ss"
+                });
             });

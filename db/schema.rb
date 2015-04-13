@@ -11,14 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150405192706) do
+ActiveRecord::Schema.define(version: 20150413023154) do
 
   create_table "reminders", force: :cascade do |t|
     t.text     "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.datetime "send_time"
+    t.integer  "user_id"
   end
+
+  add_index "reminders", ["user_id"], name: "index_reminders_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

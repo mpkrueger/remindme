@@ -2,7 +2,7 @@ class RemindersController < ApplicationController
   before_filter :authorize
 
   def index
-    @reminders = Reminder.all
+    @reminders = current_user.reminders
   end
 
   def show
