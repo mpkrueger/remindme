@@ -21,6 +21,7 @@
 
 $(document).on('page:load', function () {
                 $('#datetime_field').datetimepicker({
-                  format: "YYYY/MM/DD HH:mm:ss"
+                  format: "YYYY/MM/DD HH:mm:ss",
+                  minDate: "moment"
                 });
             });
