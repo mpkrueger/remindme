@@ -1,12 +1,13 @@
-<div class="jumbotron">
+<div>
 <h1>RemindMeLater</h1>
-<p>A simple service to schedule reminders that will be sent to you via SMS.</p>
+<h3>Schedule an SMS to be sent to you at an important time in the future.</h3>
 
 <% if current_user %>
   <%= link_to "Create a New Reminder", new_reminder_path, class: 'btn btn-default btn-lg' %>
   <%= link_to "See your reminders", reminders_path %>
 <% else %>
-  <%= link_to "Sign Up", new_user_path, class: 'btn btn-primary btn-lg' %> 
-  <%= link_to "Sign In", login_path, class: 'btn btn-default btn-sm' %>
+  <%= link_to "Sign Up", new_user_path, class: 'btn btn-primary btn-lg btn-block' %>
+
+  <%= link_to "Sign In", login_path, class: 'btn btn-default btn-block' %>
 <% end %>
 </div>
