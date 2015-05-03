@@ -14,7 +14,7 @@ class RemindersController < ApplicationController
   end
 
   def create
-    @reminder = Reminder.new(params.require(:reminder).permit(:message, :send_time))
+    @reminder = Reminder.new(params.require(:reminder).permit(:message, :send_time_date, :send_time_time))
     @reminder.user_id = current_user.id
     if @reminder.save
       flash[:notice] = "Reminder was saved."
@@ -31,7 +31,7 @@ class RemindersController < ApplicationController
 
   def update
     @reminder = Reminder.find(params[:id])
-    if @reminder.update_attributes(params.require(:reminder).permit(:message, :send_time))
+    if @reminder.update_attributes(params.require(:reminder).permit(:message, :send_time_date, :send_time_time))
       flash[:notice] = "Your reminder was updated."
       redirect_to @reminder
     else
