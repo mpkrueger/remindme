@@ -15,6 +15,7 @@ class RemindersController < ApplicationController
 
   def create
     @reminder = Reminder.new(params.require(:reminder).permit(:message, :send_time_date, :send_time_time))
+    @reminder.send_time_time_zone = 'Pacific Time (US & Canada)'
     @reminder.user_id = current_user.id
     if @reminder.save
       flash[:notice] = "Reminder was saved."
