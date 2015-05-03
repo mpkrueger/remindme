@@ -7,10 +7,16 @@
         <%= f.text_field :message, class: "form-control", placeholder: "Remind me to..." %>
       </div>
       
-      <div class="datetimepicker-container">
+      <div class="form-group">
+        <%= f.date_field :send_time_date %>
+        <%= f.time_field :send_time_hour, collection: 0..24 %>
+        <%= f.time_field :send_time_min, collection: [0, 15, 30, 45] %>
+      </div>
+
+      <!-- div class="datetimepicker-container">
         <%= f.label :send_time %>
         <%= f.datetime_field :send_time, class: "form-control" %>
-      </div>
+      < --><!-- /div> -->
 
       <%= f.submit "Save", class: "btn btn-success" %>
     <% end %>
