@@ -9,8 +9,7 @@
       
       <div class="form-group">
         <%= f.date_field :send_time_date %>
-        <%= f.time_field :send_time_hour, collection: 0..24 %>
-        <%= f.time_field :send_time_min, collection: [0, 15, 30, 45] %>
+        <%= f.time_field :send_time_time %>
       </div>
 
       <!-- div class="datetimepicker-container">
