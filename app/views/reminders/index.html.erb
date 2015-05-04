@@ -2,13 +2,13 @@
 <p><%= link_to "Create a new reminder", new_reminder_path, class: 'btn btn-success' %></p>
 <table class="table">
   <tr>
-    <th>Reminder Message</th>
-    <th>Next Send Date</th>
+    <th>Reminder</th>
+    <th>Send Date</th>
   </tr>
   <% @reminders.each do |reminder| %>
     <tr>
       <th><%= link_to reminder.message, reminder_path(reminder.id) %></th>
-      <th><%= reminder.send_time %></th>
+      <th><%= reminder.send_time.strftime("%A, %b %d at %I:%M %p") %></th>
     </tr>
   <% end %>
 </table>
