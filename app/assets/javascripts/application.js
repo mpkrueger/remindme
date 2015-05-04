@@ -14,14 +14,4 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
-//= require moment
-//= require bootstrap-datetimepicker
 //= require_tree .
-
-
-$(document).on('page:load', function () {
-                $('#datetime_field').datetimepicker({
-                  format: "YYYY/MM/DD HH:mm:ss",
-                  minDate: "moment"
-                });
-            });
