@@ -2,7 +2,7 @@ class RemindersController < ApplicationController
   before_filter :authorize
 
   def index
-    @reminders = current_user.reminders.where("send_time > ?", Time.now).order("send_time desc")
+    @reminders = current_user.reminders.where("send_time > ?", Time.now).order("send_time asc")
   end
 
   def show
