@@ -1,11 +1,20 @@
 <h1><%= @reminder.message %></h1>
 
 <%= form_for @reminder do |f| %>
-  <%= f.label :message %>
-  <%= f.text_field :message %>
+  <div class="form-group">
+    <%= f.label :message %>
+    <%= f.text_field :message, class: "form-control", placeholder: "Remind me to..." %>
+  </div>
+      
+  <div class="form-group">
+    <%= f.label "Date" %>
+    <%= f.date_field :send_time_date %>
+  </div>
+  
+  <div class="form-group">
+    <%= f.label "Time" %>
+    <%= f.time_field :send_time_time %>
+  </div>
 
-  <%= f.label :send_time %>
-  <%= f.datetime_field :send_time %>
-
-  <%= f.submit "Save" %>
+  <%= f.submit "Save", class: "btn btn-success btn-block" %>
 <% end %>
