@@ -9,6 +9,10 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   def authorize
-    redirect_to login_path unless current_user
+    if !current_user
+      redirect_to login_path
+    elsif current_user && current_user.verified != true
+      redirect_to verify_user_path(current_user.id)
+    end
   end
 end
