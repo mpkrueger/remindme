@@ -1,4 +1,5 @@
-== README
+README
+======
 
 This app sends SMS messages via Twilio. Its intended function is to serve as a personal reminder system where the reminders are sent via SMS and don't rely on any particular app.
 
