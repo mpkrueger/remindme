@@ -4,4 +4,4 @@ require 'clockwork'
 
 include Clockwork
 
-every(2.minutes, 'Sending reminder messages') { Reminder.messages_to_send.each { |reminder| SmsSender.new(reminder, reminder.user).send_sms } }
+every(30.minutes, 'Sending reminder messages') { Reminder.messages_to_send.each { |reminder| SmsSender.new(reminder, reminder.user).send_sms } }
